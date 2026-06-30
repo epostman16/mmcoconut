@@ -1,9 +1,9 @@
 export const companyInfo = {
   name: "MM Coconut Processing Unit",
   shortName: "MM Coconut",
-  tagline: "Premium Coconut Products Manufacturer & Supplier",
+  tagline: "Premium Desiccated Coconut Powder Manufacturer & Supplier",
   description:
-    "Delivering Quality Coconut Products from Tamil Nadu to Customers Across India",
+    "Specializing in fine-grade desiccated coconut powder — delivering quality coconut products from Tamil Nadu to customers across India.",
   address: {
     line1: "No: 0/1/162, Melamanakkudi Main Road",
     line2: "Puduvayal, Karaikudi (TK)",
@@ -12,7 +12,7 @@ export const companyInfo = {
   },
   phone: "+91 96292 92085",
   phoneRaw: "919629292085",
-  email: "info@mmcoconut.com",
+  email: "info@mmcoconut.in",
   gstin: "33FBRPM3168J1Z4",
   udyam: "UDYAM-TN-21-0028346",
   coordinates: { lat: 10.091654, lng: 78.854345 },
@@ -93,7 +93,10 @@ export interface Product {
   applications: string[];
   image: string;
   gradient: string;
+  featured?: boolean;
 }
+
+export const featuredProductSlug = "desiccated-coconut-powder";
 
 export const productCategories: { id: ProductCategory; label: string }[] = [
   { id: "all", label: "All Products" },
@@ -105,6 +108,28 @@ export const productCategories: { id: ProductCategory; label: string }[] = [
 ];
 
 export const products: Product[] = [
+  {
+    id: "3",
+    name: "Desiccated Coconut Powder",
+    slug: "desiccated-coconut-powder",
+    category: "powders",
+    featured: true,
+    shortDescription:
+      "Our flagship fine-grade desiccated coconut powder for bakery, confectionery, and food manufacturing.",
+    description:
+      "Our signature product — premium desiccated coconut powder with consistent moisture content, uniform particle size, and natural white color. Hygienically processed and packed in food-grade pouches, it is trusted by bakeries, confectionery makers, and food processors across India.",
+    features: [
+      "Low moisture content",
+      "Uniform fine particle size",
+      "Natural white color",
+      "Food-grade packaging",
+      "Extended shelf life",
+      "Bulk & retail supply",
+    ],
+    applications: ["Bakery", "Confectionery", "Ice cream", "Snack foods", "Food manufacturing"],
+    image: "/images/desiccated-coconut-powder.png",
+    gradient: "from-stone-100 to-stone-300",
+  },
   {
     id: "1",
     name: "Coconut Oil",
@@ -140,24 +165,6 @@ export const products: Product[] = [
     applications: ["Health supplements", "Skincare", "Hair care", "Gourmet cooking"],
     image: "https://images.unsplash.com/photo-1605844554081-565c79ddb34?w=800&q=80",
     gradient: "from-green-600 to-emerald-800",
-  },
-  {
-    id: "3",
-    name: "Desiccated Coconut Powder",
-    slug: "desiccated-coconut-powder",
-    category: "powders",
-    shortDescription: "Fine-grade desiccated coconut for food manufacturing.",
-    description:
-      "Premium desiccated coconut powder with consistent moisture content and particle size. Widely used in confectionery, bakery, and food processing industries.",
-    features: [
-      "Low moisture content",
-      "Uniform particle size",
-      "Natural white color",
-      "Extended shelf life",
-    ],
-    applications: ["Bakery", "Confectionery", "Ice cream", "Snack foods"],
-    image: "https://images.unsplash.com/photo-1587735243685-cb9bdc3237fe?w=800&q=80",
-    gradient: "from-stone-100 to-stone-300",
   },
   {
     id: "4",
@@ -384,7 +391,7 @@ export const faqs = [
   {
     question: "What products does MM Coconut Processing Unit manufacture?",
     answer:
-      "We manufacture a wide range of coconut products including coconut oil, virgin coconut oil, desiccated coconut powder, copra, coconut shell products, husk products, coir fiber, charcoal, coconut cake, and industrial raw materials.",
+      "Our flagship product is desiccated coconut powder, along with coconut oil, virgin coconut oil, copra, coconut shell products, husk products, coir fiber, charcoal, coconut cake, and industrial raw materials.",
   },
   {
     question: "Do you supply products across India?",
@@ -427,6 +434,7 @@ export const footerLinks = {
     { href: "/contact", label: "Contact Us" },
   ],
   products: [
+    { href: "/products#desiccated-coconut-powder", label: "Desiccated Coconut Powder" },
     { href: "/products?category=oils", label: "Coconut Oils" },
     { href: "/products?category=powders", label: "Coconut Powders" },
     { href: "/products?category=by-products", label: "By-Products" },

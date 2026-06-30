@@ -17,7 +17,12 @@ export const metadata: Metadata = {
   description: `Contact ${companyInfo.name} for bulk orders and inquiries. Located in Puduvayal, Karaikudi, Tamil Nadu. Call ${companyInfo.phone}.`,
 };
 
-export default function ContactPage() {
+export default function ContactPage({
+  searchParams,
+}: {
+  searchParams: { product?: string };
+}) {
+  const defaultProduct = searchParams.product;
   return (
     <>
       <section className="relative pt-32 pb-16 bg-coconut-green-dark text-white overflow-hidden">
@@ -43,7 +48,7 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-5 gap-10">
             <div className="lg:col-span-3">
               <AnimatedSection>
-                <ContactForm />
+                <ContactForm defaultProduct={defaultProduct} />
               </AnimatedSection>
             </div>
 

@@ -7,7 +7,7 @@ import { ProductCategory } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Explore our complete range of premium coconut products including coconut oil, virgin coconut oil, desiccated coconut powder, copra, and industrial raw materials.",
+    "Explore our complete range of premium coconut products. Our flagship desiccated coconut powder, plus coconut oil, virgin coconut oil, copra, and industrial raw materials.",
 };
 
 function ProductsContent({
@@ -37,8 +37,8 @@ export default function ProductsPage({
               Premium Coconut Products
             </h1>
             <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
-              Discover our comprehensive range of high-quality coconut products
-              for food, cosmetic, and industrial applications.
+              Featuring our flagship desiccated coconut powder, plus oils, copra,
+              and industrial coconut materials for every application.
             </p>
           </AnimatedSection>
         </div>

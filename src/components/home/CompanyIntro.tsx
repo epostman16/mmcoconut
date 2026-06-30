@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 
 export function CompanyIntro() {
   const highlights = [
+    "Specialists in premium desiccated coconut powder",
     "Government registered & UDYAM certified unit",
     "Modern processing facility in Karaikudi",
     "Direct sourcing from Tamil Nadu farms",

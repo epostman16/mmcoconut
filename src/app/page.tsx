@@ -1,4 +1,5 @@
 import { Hero, Stats } from "@/components/home/Hero";
+import { FeaturedProduct } from "@/components/home/FeaturedProduct";
 import { CompanyIntro } from "@/components/home/CompanyIntro";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { ProductHighlights } from "@/components/home/ProductHighlights";
@@ -14,6 +15,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Stats />
+      <FeaturedProduct />
       <CompanyIntro />
       <WhyChooseUs />
       <ProductHighlights />

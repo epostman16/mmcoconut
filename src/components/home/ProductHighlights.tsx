@@ -9,7 +9,7 @@ import { ProductImage } from "@/components/products/ProductImage";
 import { products } from "@/lib/data";
 
 export function ProductHighlights() {
-  const featured = products.slice(0, 6);
+  const featured = products.filter((p) => !p.featured).slice(0, 6);
 
   return (
     <section className="section-padding">
@@ -17,8 +17,8 @@ export function ProductHighlights() {
         <AnimatedSection>
           <SectionHeading
             badge="Our Products"
-            title="Premium Coconut Product Range"
-            subtitle="From cooking oils to industrial raw materials, we offer a comprehensive range of coconut products for every need."
+            title="More Coconut Products"
+            subtitle="Alongside our flagship desiccated coconut powder, we offer oils, copra, and industrial coconut materials."
           />
         </AnimatedSection>
 
@@ -39,7 +39,7 @@ export function ProductHighlights() {
                     variant="secondary"
                     className="absolute top-4 left-4 z-10 bg-white/90 text-foreground"
                   >
-                    {product.category.replace("-", " ")}
+                    {product.featured ? "Flagship" : product.category.replace("-", " ")}
                   </Badge>
                 </div>
                 <div className="p-6 flex flex-col flex-1">

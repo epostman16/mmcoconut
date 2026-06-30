@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { companyInfo } from "@/lib/data";
+import { companyInfo, featuredProductSlug } from "@/lib/data";
 
 export function Hero() {
   return (
@@ -30,7 +30,7 @@ export function Hero() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium mb-6">
               <span className="w-2 h-2 rounded-full bg-coconut-green-light animate-pulse" />
-              Trusted Coconut Manufacturer in Tamil Nadu
+              Leading Desiccated Coconut Powder Manufacturer
             </span>
           </motion.div>
 
@@ -59,8 +59,8 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Button asChild size="lg" variant="white" className="text-base">
-              <Link href="/products">
-                View Products
+              <Link href={`/products#${featuredProductSlug}`}>
+                Our Main Product
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search } from "lucide-react";
+import { Search, Star } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -26,14 +26,16 @@ export function ProductGrid({ initialCategory = "all" }: ProductGridProps) {
   const [search, setSearch] = useState("");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  const filtered = products.filter((p) => {
-    const matchesCategory = category === "all" || p.category === category;
-    const matchesSearch =
-      search === "" ||
-      p.name.toLowerCase().includes(search.toLowerCase()) ||
-      p.shortDescription.toLowerCase().includes(search.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const filtered = products
+    .filter((p) => {
+      const matchesCategory = category === "all" || p.category === category;
+      const matchesSearch =
+        search === "" ||
+        p.name.toLowerCase().includes(search.toLowerCase()) ||
+        p.shortDescription.toLowerCase().includes(search.toLowerCase());
+      return matchesCategory && matchesSearch;
+    })
+    .sort((a, b) => Number(b.featured) - Number(a.featured));
 
   return (
     <>
@@ -89,8 +91,14 @@ export function ProductGrid({ initialCategory = "all" }: ProductGridProps) {
                     iconClassName="h-20 w-20"
                   />
                   <Badge className="absolute top-4 left-4 z-10" variant="secondary">
-                    {product.category.replace("-", " ")}
+                    {product.featured ? "Flagship Product" : product.category.replace("-", " ")}
                   </Badge>
+                  {product.featured && (
+                    <Badge className="absolute top-4 right-4 z-10 bg-coconut-green text-white border-0 gap-1">
+                      <Star className="h-3 w-3 fill-current" />
+                      Main Product
+                    </Badge>
+                  )}
                 </div>
                 <CardContent className="p-6 flex flex-col flex-1">
                   <h3 className="text-xl font-bold mb-2">{product.name}</h3>
